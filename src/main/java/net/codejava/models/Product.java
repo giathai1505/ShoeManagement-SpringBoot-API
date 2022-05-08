@@ -72,8 +72,4 @@ public class Product {
 	public void setProduct_status(Integer product_status) {
 		Product_status = product_status;
 	}
-	
-	
-	
-
 }
