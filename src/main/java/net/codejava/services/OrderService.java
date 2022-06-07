@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import net.codejava.models.Order;
+import net.codejava.models.Orderr;
 import net.codejava.repositories.OrderRepository;
 
 @Service
@@ -13,15 +13,15 @@ public class OrderService {
 	@Autowired
 	private OrderRepository repo;
 	
-	public List<Order> listAll() {
+	public List<Orderr> listAll() {
 		return repo.findAll();
 	}
 	
-	public void save(Order order) {
+	public void save(Orderr order) {
 		repo.save(order);
 	}
 	
-	public Order get(Integer id) {
+	public Orderr get(Integer id) {
 		return repo.findById(id).get();
 	}
 	public void delete(Integer id) {
