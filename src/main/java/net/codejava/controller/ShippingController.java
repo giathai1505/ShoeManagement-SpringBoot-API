@@ -10,27 +10,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import net.codejava.models.Orderr;
-import net.codejava.services.OrderService;
+import net.codejava.models.Shipping;
+import net.codejava.services.ShippingService;
 
 @RestController
-public class OrderController {
+public class ShippingController {
 	@Autowired
-	private OrderService service;
-	
-	@GetMapping("/orders")
-	public List<Orderr> list() {
-		return service.listAll();
+	private ShippingService service;
+	@GetMapping("/shippings")
+	public List<Shipping> allShippings()
+	{
+		return service.getAllShippings();
 	}
-	
-	@GetMapping("/orders/{id}")
-	public ResponseEntity<Orderr> get(@PathVariable Integer id) {
+	@GetMapping("/shippings/{id}")
+	public ResponseEntity<Shipping> get(@PathVariable Integer id) {
 		try {
-			Orderr orderr = service.get(id);
-			return new ResponseEntity<Orderr>(orderr, HttpStatus.OK);
+			Shipping shipping = service.get(id);
+			return new ResponseEntity<Shipping>(shipping, HttpStatus.OK);
 		} catch (NoSuchElementException e) {
-			return new ResponseEntity<Orderr>(HttpStatus.NOT_FOUND);
+			return new ResponseEntity<Shipping>(HttpStatus.NOT_FOUND);
 		}
-
 	}
 }

@@ -5,23 +5,24 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import net.codejava.models.Orderr;
-import net.codejava.repositories.OrderRepository;
+import net.codejava.models.Shipping;
+import net.codejava.repositories.ShippingRepository;
+
+
 
 @Service
-public class OrderService {
+public class ShippingService {
 	@Autowired
-	private OrderRepository repo;
+	private ShippingRepository repo;
 	
-	public List<Orderr> listAll() {
+	public List<Shipping> getAllShippings()
+	{
 		return repo.findAll();
 	}
-	
-	public void save(Orderr order) {
-		repo.save(order);
+	public void save(Shipping shipping) {
+		repo.save(shipping);
 	}
-	
-	public Orderr get(Integer id) {
+	public Shipping get(Integer id) {
 		return repo.findById(id).get();
 	}
 	public void delete(Integer id) {

@@ -6,16 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Order {
+public class Orderr {
 	private Integer Order_id;
 	private Integer Shipping_id;
 	private Integer Account_id;
 	private double Total;
 	private Integer Order_status;
 	
-	public Order() {
+	public Orderr() {
 	}
-	public Order(Integer order_id, Integer shipping_id, Integer account_id, double total, Integer order_status) {
+	public Orderr(Integer order_id, Integer shipping_id, Integer account_id, double total, Integer order_status) {
 		Order_id = order_id;
 		Shipping_id = shipping_id;
 		Account_id = account_id;
