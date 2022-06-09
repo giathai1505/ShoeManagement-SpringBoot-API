@@ -8,9 +8,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.codejava.models.Orderr;
+import net.codejava.models.Product;
 import net.codejava.services.OrderService;
 
 @RestController
@@ -33,4 +36,16 @@ public class OrderController {
 		}
 
 	}
+	
+	@PutMapping("/orders/updateStatus/{id}")
+	public ResponseEntity<?> update(@RequestBody Orderr orderr, @PathVariable Integer id) {
+		try {
+			Orderr existOrderr = service.get(id);
+			service.save(orderr);
+			return new ResponseEntity<Orderr>(HttpStatus.OK);
+		} catch(NoSuchElementException e) {
+			return new ResponseEntity<Orderr>(HttpStatus.NOT_FOUND);
+		}
+	}
+	
 }
