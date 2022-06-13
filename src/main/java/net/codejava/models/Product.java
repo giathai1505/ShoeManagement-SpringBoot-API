@@ -14,10 +14,13 @@ public class Product {
 	private String Product_img;
 	private Integer Product_quanity;
 	private Integer Product_status;
+	private String Product_desc;
+	
 	public Product() {
 	}
+	
 	public Product(Integer product_id, String product_name, Integer category_id, double product_price,
-			String product_img, Integer product_quanity, Integer product_status) {
+			String product_img, Integer product_quanity, Integer product_status, String product_desc) {
 		super();
 		Product_id = product_id;
 		Product_name = product_name;
@@ -26,10 +29,11 @@ public class Product {
 		Product_img = product_img;
 		Product_quanity = product_quanity;
 		Product_status = product_status;
+		Product_desc = product_desc;
 	}
-	
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	public Integer getProduct_id() {
 		return Product_id;
 	}
@@ -72,4 +76,13 @@ public class Product {
 	public void setProduct_status(Integer product_status) {
 		Product_status = product_status;
 	}
+	public String getProduct_desc() {
+		return Product_desc;
+	}
+	public void setProduct_desc(String product_desc) {
+		Product_desc = product_desc;
+	}
+	
+	
+	
 }
