@@ -18,10 +18,12 @@ public class CartDetailService {
 		return repo.findAll();
 	}
 	
-	public List<CartDetail> getCartDetailByAcountId(Integer accountId) {
+	public List<CartDetail> getCartDetailByAccountId(Integer accountId) {
 		return repo.findByAccountId(accountId);
 	}
-	
+	public Long deleteCartDetailByAccountId(Integer accountId) {
+		return repo.deleteByAccountId(accountId);
+	}
 	public void save(CartDetail cart_detail) {
 		repo.save(cart_detail);
 	}

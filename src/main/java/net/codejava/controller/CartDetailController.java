@@ -31,8 +31,8 @@ public class CartDetailController {
 	}
 	
 	@GetMapping("/cartDetails/accountId/{accountId}")
-	public List<CartDetail> listCartDetailByAccount(@PathVariable Integer accountId) {
-		return service.getCartDetailByAcountId(accountId);
+	public List<CartDetail> listCartDetailByAccountId(@PathVariable Integer accountId) {
+		return service.getCartDetailByAccountId(accountId);
 	}
 	@PostMapping("/cartDetail")
 	public void add(@RequestBody CartDetail cartDetail) {
@@ -47,6 +47,10 @@ public class CartDetailController {
 		} catch(NoSuchElementException e) {
 			return new ResponseEntity<CartDetail>(HttpStatus.NOT_FOUND);
 		}
+	}
+	@DeleteMapping("/cartDetail/account/{accountId}")
+	public Long deleteByAccountId(@PathVariable Integer accountId) {		
+			return service.deleteCartDetailByAccountId(accountId);
 	}
 	@DeleteMapping("/cartDetail/{id}")
 	public ResponseEntity<?> delete(@PathVariable Integer id) {

@@ -37,6 +37,11 @@ public class OrderController {
 		}
 
 	}
+	@GetMapping("/orders/accountId/{id}")
+	public List<Orderr> getByAccountId(@PathVariable Integer id) {
+			return service.listAllOrderByAccountId(id);
+
+	}
 	@PostMapping("/order")
 	public Orderr add(@RequestBody Orderr order) {
 		Orderr newOrder = service.save(order); 

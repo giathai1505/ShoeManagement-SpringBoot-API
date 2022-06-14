@@ -7,56 +7,55 @@ import javax.persistence.Id;
 
 @Entity
 public class Account {
-	private Integer Account_id;
-	private String Account_name;
-	private String Account_email;
-	private String Account_password;
-	private String Account_avatar;
+	private Integer accountId;
+	private String accountName;
+	private String accountEmail;
+	private String accountPassword;
+	private String accountAvatar;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public Integer getAccount_id() {
-		return Account_id;
+	public Integer getAccountId() {
+		return accountId;
+	}
+	public void setAccountId(Integer accountId) {
+		this.accountId = accountId;
+	}
+	public String getAccountName() {
+		return accountName;
+	}
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+	}
+	public String getAccountEmail() {
+		return accountEmail;
+	}
+	public void setAccountEmail(String accountEmail) {
+		this.accountEmail = accountEmail;
+	}
+	public String getAccountPassword() {
+		return accountPassword;
+	}
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+	}
+	public String getAccountAvatar() {
+		return accountAvatar;
+	}
+	public void setAccountAvatar(String accountAvatar) {
+		this.accountAvatar = accountAvatar;
 	}
 	public Account() {
-		
 	}
-	public Account(Integer account_id, String account_name, String account_email, String account_password,
-			String account_avatar) {
+	public Account(Integer accountId, String accountName, String accountEmail, String accountPassword,
+			String accountAvatar) {
 		super();
-		Account_id = account_id;
-		Account_name = account_name;
-		Account_email = account_email;
-		Account_password = account_password;
-		Account_avatar = account_avatar;
+		this.accountId = accountId;
+		this.accountName = accountName;
+		this.accountEmail = accountEmail;
+		this.accountPassword = accountPassword;
+		this.accountAvatar = accountAvatar;
 	}
-	public void setAccount_id(Integer account_id) {
-		Account_id = account_id;
-	}
-	public String getAccount_name() {
-		return Account_name;
-	}
-	public void setAccount_name(String account_name) {
-		Account_name = account_name;
-	}
-	public String getAccount_email() {
-		return Account_email;
-	}
-	public void setAccount_email(String account_email) {
-		Account_email = account_email;
-	}
-	public String getAccount_password() {
-		return Account_password;
-	}
-	public void setAccount_password(String account_password) {
-		Account_password = account_password;
-	}
-	public String getAccount_avatar() {
-		return Account_avatar;
-	}
-	public void setAccount_avatar(String account_avatar) {
-		Account_avatar = account_avatar;
-	}
-	
+
 	
 
 }

@@ -1,5 +1,6 @@
 package net.codejava.controller;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.codejava.models.OrderDetail;
+import net.codejava.models.ProductRevenue;
 import net.codejava.services.OrderDetailService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +23,11 @@ public class OrderDetailController {
 	@GetMapping("/orderDetails")
 	public List<OrderDetail> list() {
 		return service.listAll();
+	}
+	
+	@PostMapping("/orderDetailByListOrder")
+	public List<ProductRevenue> getListODByOId(@RequestBody Collection<Integer> orderId) {
+		return service.getOrderDetailByListOrderId(orderId);
 	}
 	@PostMapping("/orderDetail")
 	public void add(@RequestBody OrderDetail orderDetail) {

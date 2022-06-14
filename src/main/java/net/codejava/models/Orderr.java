@@ -1,5 +1,7 @@
 package net.codejava.models;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,53 +9,66 @@ import javax.persistence.Id;
 
 @Entity
 public class Orderr {
-	private Integer Order_id;
-	private Integer Shipping_id;
-	private Integer Account_id;
-	private double Total;
-	private Integer Order_status;
-	
+	private Integer orderId;
+	private Integer shippingId;
+	private Integer accountId;
+	private double total;
+	private Integer orderStatus;
+	private LocalDate orderDate;
 	public Orderr() {
 	}
-	public Orderr(Integer order_id, Integer shipping_id, Integer account_id, double total, Integer order_status) {
-		Order_id = order_id;
-		Shipping_id = shipping_id;
-		Account_id = account_id;
-		Total = total;
-		Order_status = order_status;
+	public Orderr(Integer orderId, Integer shippingId, Integer accountId, double total, Integer orderStatus,
+			LocalDate orderDate) {
+		super();
+		this.orderId = orderId;
+		this.shippingId = shippingId;
+		this.accountId = accountId;
+		this.total = total;
+		this.orderStatus = orderStatus;
+		this.orderDate = orderDate;
 	}
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public Integer getOrder_id() {
-		return Order_id;
+	public Integer getOrderId() {
+		return orderId;
 	}
-	public void setOrder_id(Integer order_id) {
-		Order_id = order_id;
+	public void setOrderId(Integer orderId) {
+		this.orderId = orderId;
 	}
-	public Integer getShipping_id() {
-		return Shipping_id;
+	public Integer getShippingId() {
+		return shippingId;
 	}
-	public void setShipping_id(Integer shipping_id) {
-		Shipping_id = shipping_id;
+	public void setShippingId(Integer shippingId) {
+		this.shippingId = shippingId;
 	}
-	public Integer getAccount_id() {
-		return Account_id;
+	public Integer getAccountId() {
+		return accountId;
 	}
-	public void setAccount_id(Integer account_id) {
-		Account_id = account_id;
+	public void setAccountId(Integer accountId) {
+		this.accountId = accountId;
 	}
 	public double getTotal() {
-		return Total;
+		return total;
 	}
 	public void setTotal(double total) {
-		Total = total;
+		this.total = total;
 	}
-	public Integer getOrder_status() {
-		return Order_status;
+	public Integer getOrderStatus() {
+		return orderStatus;
 	}
-	public void setOrder_status(Integer order_status) {
-		Order_status = order_status;
+	public void setOrderStatus(Integer orderStatus) {
+		this.orderStatus = orderStatus;
 	}
+	public LocalDate getOrderDate() {
+		return orderDate;
+	}
+	public void setOrderDate(LocalDate orderDate) {
+		this.orderDate = orderDate;
+	}
+	
+	
+	
+	
+	
 	
 }
