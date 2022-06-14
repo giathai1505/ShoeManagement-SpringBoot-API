@@ -7,71 +7,72 @@ import javax.persistence.Id;
 
 @Entity
 public class Shipping {
-	private Integer Shipping_id;
-	private Integer Account_id;
-	private String Shipping_name;
-	private Integer Shipping_phone;
-	private String Shipping_address;
-	private String Shipping_email;
-	private String Shipping_note;
-	
-	public Shipping() {
-	}
-
-	public Shipping(Integer shipping_id, Integer account_id, String shipping_name, Integer shipping_phone,
-			String shipping_address, String shipping_email, String shipping_note) {
-		super();
-		Shipping_id = shipping_id;
-		Account_id = account_id;
-		Shipping_name = shipping_name;
-		Shipping_phone = shipping_phone;
-		Shipping_address = shipping_address;
-		Shipping_email = shipping_email;
-		Shipping_note = shipping_note;
-	}
-	
+	private Integer shippingId;
+	private Integer accountId;
+	private String shippingName;
+	private Integer shippingPhone;
+	private String shippingAddress;
+	private String shippingEmail;
+	private String shippingNote;
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public Integer getShipping_id() {
-		return Shipping_id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	
+	public Integer getShippingId() {
+		return shippingId;
 	}
-	public void setShipping_id(Integer shipping_id) {
-		Shipping_id = shipping_id;
+	public void setShippingId(Integer shippingId) {
+		this.shippingId = shippingId;
 	}
-	public Integer getAccount_id() {
-		return Account_id;
+	public Integer getAccountId() {
+		return accountId;
 	}
-	public void setAccount_id(Integer account_id) {
-		Account_id = account_id;
+	public void setAccountId(Integer accountId) {
+		this.accountId = accountId;
 	}
-	public String getShipping_name() {
-		return Shipping_name;
+	public String getShippingName() {
+		return shippingName;
 	}
-	public void setShipping_name(String shipping_name) {
-		Shipping_name = shipping_name;
+	public void setShippingName(String shippingName) {
+		this.shippingName = shippingName;
 	}
-	public Integer getShipping_phone() {
-		return Shipping_phone;
+	public Integer getShippingPhone() {
+		return shippingPhone;
 	}
-	public void setShipping_phone(Integer shipping_phone) {
-		Shipping_phone = shipping_phone;
+	public void setShippingPhone(Integer shippingPhone) {
+		this.shippingPhone = shippingPhone;
 	}
-	public String getShipping_address() {
-		return Shipping_address;
+	public String getShippingAddress() {
+		return shippingAddress;
 	}
-	public void setShipping_address(String shipping_address) {
-		Shipping_address = shipping_address;
+	public void setShippingAddress(String shippingAddress) {
+		this.shippingAddress = shippingAddress;
 	}
-	public String getShipping_email() {
-		return Shipping_email;
+	public String getShippingEmail() {
+		return shippingEmail;
 	}
-	public void setShipping_email(String shipping_email) {
-		Shipping_email = shipping_email;
+	public void setShippingEmail(String shippingEmail) {
+		this.shippingEmail = shippingEmail;
 	}
-	public String getShipping_note() {
-		return Shipping_note;
+	public String getShippingNote() {
+		return shippingNote;
 	}
-	public void setShipping_note(String shipping_note) {
-		Shipping_note = shipping_note;
+	public void setShippingNote(String shippingNote) {
+		this.shippingNote = shippingNote;
 	}
+	public Shipping(Integer shippingId, Integer accountId, String shippingName, Integer shippingPhone,
+			String shippingAddress, String shippingEmail, String shippingNote) {
+		super();
+		this.shippingId = shippingId;
+		this.accountId = accountId;
+		this.shippingName = shippingName;
+		this.shippingPhone = shippingPhone;
+		this.shippingAddress = shippingAddress;
+		this.shippingEmail = shippingEmail;
+		this.shippingNote = shippingNote;
+	}
+	public Shipping() {
+		
+	}
+	
+	
+	
 }

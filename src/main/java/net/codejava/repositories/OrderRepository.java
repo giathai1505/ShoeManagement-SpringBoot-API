@@ -6,5 +6,5 @@ import net.codejava.models.Orderr;
 
 
 public interface OrderRepository extends JpaRepository<Orderr, Integer> {
-
+	
 }

@@ -30,10 +30,10 @@ public class CartDetailController {
 		return service.listAll();
 	}
 	
-//	@GetMapping("/orderDetails/order/{orderId}")
-//	public List<OrderDetail> listOrderDetailByOrder(@PathVariable Integer orderId) {
-//		return service.getOrderDetailByOrderId(orderId);
-//	}
+	@GetMapping("/cartDetails/accountId/{accountId}")
+	public List<CartDetail> listCartDetailByAccount(@PathVariable Integer accountId) {
+		return service.getCartDetailByAcountId(accountId);
+	}
 	@PostMapping("/cartDetail")
 	public void add(@RequestBody CartDetail cartDetail) {
 		service.save(cartDetail);
@@ -42,7 +42,7 @@ public class CartDetailController {
 	public ResponseEntity<?> update(@RequestBody CartDetail cartDetail, @PathVariable Integer id) {
 		try {
 			CartDetail existCartDetail = service.get(id);
-			service.save(existCartDetail);
+			service.save(cartDetail);
 			return new ResponseEntity<CartDetail>(HttpStatus.OK);
 		} catch(NoSuchElementException e) {
 			return new ResponseEntity<CartDetail>(HttpStatus.NOT_FOUND);

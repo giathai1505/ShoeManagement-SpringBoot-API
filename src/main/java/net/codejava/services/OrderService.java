@@ -17,8 +17,8 @@ public class OrderService {
 		return repo.findAll();
 	}
 	
-	public void save(Orderr order) {
-		repo.save(order);
+	public Orderr save(Orderr order) {
+		return repo.save(order);
 	}
 	
 	public Orderr get(Integer id) {

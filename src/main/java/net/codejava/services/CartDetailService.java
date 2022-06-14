@@ -18,9 +18,9 @@ public class CartDetailService {
 		return repo.findAll();
 	}
 	
-//	public List<OrderDetail> getOrderDetailByOrderId(Integer orderId) {
-//		return repo.findByOrderId(orderId);
-//	}
+	public List<CartDetail> getCartDetailByAcountId(Integer accountId) {
+		return repo.findByAccountId(accountId);
+	}
 	
 	public void save(CartDetail cart_detail) {
 		repo.save(cart_detail);

@@ -1,25 +1,15 @@
 package net.codejava.controller;
 
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.codejava.models.OrderDetail;
-import net.codejava.models.Product;
-import net.codejava.repositories.OrderDetailRepository;
 import net.codejava.services.OrderDetailService;
-import net.codejava.services.ProductService;
-
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
@@ -32,7 +22,10 @@ public class OrderDetailController {
 	public List<OrderDetail> list() {
 		return service.listAll();
 	}
-	
+	@PostMapping("/orderDetail")
+	public void add(@RequestBody OrderDetail orderDetail) {
+		service.save(orderDetail);
+	}
 	@GetMapping("/orderDetails/order/{orderId}")
 	public List<OrderDetail> listOrderDetailByOrder(@PathVariable Integer orderId) {
 //		try {

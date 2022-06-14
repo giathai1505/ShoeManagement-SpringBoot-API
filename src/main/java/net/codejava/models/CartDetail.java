@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class CartDetail {
 	private Integer cartDetailId;
 	private Integer productId;
-	private Integer cartId;
+	private Integer accountId;
 	private Integer cartProductQuanity;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,11 +25,11 @@ public class CartDetail {
 	public void setProductId(Integer productId) {
 		this.productId = productId;
 	}
-	public Integer getCartId() {
-		return cartId;
+	public Integer getAccountId() {
+		return accountId;
 	}
-	public void setCartId(Integer cartId) {
-		this.cartId = cartId;
+	public void setAccountId(Integer accountId) {
+		this.accountId = accountId;
 	}
 	public Integer getCartProductQuanity() {
 		return cartProductQuanity;
@@ -39,12 +39,13 @@ public class CartDetail {
 	}
 	public CartDetail() {
 	}
-	public CartDetail(Integer cartDetailId, Integer productId, Integer cartId, Integer cartProductQuanity) {
+	public CartDetail(Integer cartDetailId, Integer productId, Integer accountId, Integer cartProductQuanity) {
 		super();
 		this.cartDetailId = cartDetailId;
 		this.productId = productId;
-		this.cartId = cartId;
+		this.accountId = accountId;
 		this.cartProductQuanity = cartProductQuanity;
 	}
+	
 	
 }
