@@ -16,6 +16,6 @@ import net.codejava.models.ProductRevenue;
 public interface OrderDetailRepository extends JpaRepository<OrderDetail, Integer> {
 	List<OrderDetail> findByOrderId(Integer orderId);
 	
-	@Query("SELECT productId, SUM(productQuanity) as Product_quantity FROM OrderDetail WHERE Order_id IN :orderId GROUP BY(productId) ")
-	List<ProductRevenue> findByListOrderId(@Param("orderId") Collection<Integer> orderId);
+	@Query("SELECT productId, SUM(productQuanity) as productQuantity FROM OrderDetail WHERE orderId IN :orderIds GROUP BY(productId) ")
+	List<ProductRevenue> findByListOrderId(@Param("orderIds") Collection<Integer> orderIds);
 }

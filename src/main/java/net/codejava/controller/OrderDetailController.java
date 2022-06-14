@@ -1,5 +1,6 @@
 package net.codejava.controller;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -26,8 +27,8 @@ public class OrderDetailController {
 	}
 	
 	@PostMapping("/orderDetailByListOrder")
-	public List<ProductRevenue> getListODByOId(@RequestBody Collection<Integer> orderId) {
-		return service.getOrderDetailByListOrderId(orderId);
+	public List<ProductRevenue> getListODByOId(@RequestBody List<Integer> orderIds) {
+		return service.getOrderDetailByListOrderId(orderIds);
 	}
 	@PostMapping("/orderDetail")
 	public void add(@RequestBody OrderDetail orderDetail) {
