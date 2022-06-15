@@ -37,7 +37,7 @@ public class AccountController {
 		}
 	}
 	@PostMapping("/account/login")
-	public ResponseEntity<Account> login(@RequestBody LoginForm login ) {
+	public ResponseEntity<?> login(@RequestBody LoginForm login ) {
 		try {
 			Account c = service.login(login);
 			return new ResponseEntity<Account>(c, HttpStatus.OK);
@@ -47,8 +47,9 @@ public class AccountController {
 	}
 	
 	@PostMapping("/account")
-	public void add(@RequestBody Account account) {
-		service.save(account);
+	public ResponseEntity<?> add(@RequestBody Account account) {
+		Account c = service.save(account);
+		return new ResponseEntity<Account>(c, HttpStatus.OK);
 	}
 
 }

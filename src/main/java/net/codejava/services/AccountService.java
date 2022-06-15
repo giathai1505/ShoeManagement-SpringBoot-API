@@ -17,8 +17,8 @@ public class AccountService {
 	{
 		return repo.findAll();
 	}
-	public void save(Account account) {
-		repo.save(account);
+	public Account save(Account account) {
+		return repo.save(account);
 	}
 	public Account login(LoginForm login) {
 		return repo.findByAccountNameAndAccountPassword(login.getUsername(), login.getPassword());
