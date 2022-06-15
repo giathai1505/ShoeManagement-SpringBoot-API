@@ -8,8 +8,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import net.codejava.models.Account;
+import net.codejava.models.LoginForm;
+import net.codejava.models.Product;
 import net.codejava.services.AccountService;
 
 @RestController
@@ -31,6 +35,20 @@ public class AccountController {
 		} catch (NoSuchElementException e) {
 			return new ResponseEntity<Account>(HttpStatus.NOT_FOUND);
 		}
+	}
+	@PostMapping("/account/login")
+	public ResponseEntity<Account> login(@RequestBody LoginForm login ) {
+		try {
+			Account c = service.login(login);
+			return new ResponseEntity<Account>(c, HttpStatus.OK);
+		} catch (NoSuchElementException e) {
+			return new ResponseEntity<Account>(HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	@PostMapping("/account")
+	public void add(@RequestBody Account account) {
+		service.save(account);
 	}
 
 }

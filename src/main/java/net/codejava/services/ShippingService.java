@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import net.codejava.models.Shipping;
 import net.codejava.repositories.ShippingRepository;
 
@@ -18,6 +17,9 @@ public class ShippingService {
 	public List<Shipping> getAllShippings()
 	{
 		return repo.findAll();
+	}
+	public List<Shipping> getShippingByAcountId(Integer accountId) {
+		return repo.findByAccountId(accountId);
 	}
 	public void save(Shipping shipping) {
 		repo.save(shipping);

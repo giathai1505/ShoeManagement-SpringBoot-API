@@ -1,11 +1,13 @@
 package net.codejava.services;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import net.codejava.models.OrderDetail;
+import net.codejava.models.ProductRevenue;
 import net.codejava.repositories.OrderDetailRepository;
 
 
@@ -22,6 +24,9 @@ public class OrderDetailService {
 		return repo.findByOrderId(orderId);
 	}
 	
+	public List<ProductRevenue> getOrderDetailByListOrderId(List<Integer> orderIds) {
+		return repo.findByListOrderId(orderIds);
+	} 
 	public void save(OrderDetail order_detail) {
 		repo.save(order_detail);
 	}

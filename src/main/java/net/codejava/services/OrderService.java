@@ -16,9 +16,11 @@ public class OrderService {
 	public List<Orderr> listAll() {
 		return repo.findAll();
 	}
-	
-	public void save(Orderr order) {
-		repo.save(order);
+	public List<Orderr> listAllOrderByAccountId(Integer accountId) {
+		return repo.findByAccountId(accountId);
+	}
+	public Orderr save(Orderr order) {
+		return repo.save(order);
 	}
 	
 	public Orderr get(Integer id) {
