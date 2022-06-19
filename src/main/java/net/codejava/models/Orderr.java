@@ -16,6 +16,7 @@ public class Orderr {
 	private Integer orderStatus;
 	private LocalDate orderDate;
 	public Orderr() {
+		this.orderDate = LocalDate.now();
 	}
 	public Orderr(Integer orderId, Integer shippingId, Integer accountId, double total, Integer orderStatus,
 			LocalDate orderDate) {
