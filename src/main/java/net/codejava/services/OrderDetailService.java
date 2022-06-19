@@ -24,7 +24,7 @@ public class OrderDetailService {
 		return repo.findByOrderId(orderId);
 	}
 	
-	public List<ProductRevenue> getOrderDetailByListOrderId(List<Integer> orderIds) {
+	public List<ProductRevenue> getOrderDetailByListOrderId(Object orderIds) {
 		return repo.findByListOrderId(orderIds);
 	} 
 	public void save(OrderDetail order_detail) {

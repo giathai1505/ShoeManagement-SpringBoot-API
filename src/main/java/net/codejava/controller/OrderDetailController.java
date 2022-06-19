@@ -26,10 +26,13 @@ public class OrderDetailController {
 		return service.listAll();
 	}
 	
-	@PostMapping("/orderDetailByListOrder")
-	public List<ProductRevenue> getListODByOId(@RequestBody List<Integer> orderIds) {
-		return service.getOrderDetailByListOrderId(orderIds);
-	}
+//	@PostMapping("/orderDetailByListOrder")
+//	public List<ProductRevenue> getListODByOId(@RequestBody Object orderIds) {
+//		Class <?> a = orderIds.getClass();
+//		Field field = a.getField("orderId");
+//		System.out.println(orderIds);
+//		return service.getOrderDetailByListOrderId(orderIds);
+//	}
 	@PostMapping("/orderDetail")
 	public void add(@RequestBody OrderDetail orderDetail) {
 		service.save(orderDetail);

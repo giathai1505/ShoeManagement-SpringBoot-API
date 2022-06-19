@@ -17,5 +17,5 @@ public interface OrderDetailRepository extends JpaRepository<OrderDetail, Intege
 	List<OrderDetail> findByOrderId(Integer orderId);
 	
 	@Query("SELECT productId, SUM(productQuanity) as productQuantity FROM OrderDetail WHERE orderId IN :orderIds GROUP BY(productId) ")
-	List<ProductRevenue> findByListOrderId(@Param("orderIds") Collection<Integer> orderIds);
+	List<ProductRevenue> findByListOrderId(@Param("orderIds") Object orderIds);
 }
